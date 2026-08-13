@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["YC9N37F9HC.com.max-memory.app"],
+        "components": [
+          { "/": "/invite/*", "comment": "Shared-space invite links open the app" }
+        ]
+      }
+    ]
+  }
+}

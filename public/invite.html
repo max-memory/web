@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>You're invited — Max Memory</title>
+<link rel="icon" href="/img/favicon-48.png">
+<style>
+  body { margin: 0; min-height: 100svh; display: grid; place-items: center;
+         font-family: ui-rounded, -apple-system, system-ui, sans-serif;
+         background: #faf9f6; color: #123642; text-align: center; padding: 24px; }
+  @media (prefers-color-scheme: dark) { body { background: #0c1519; color: #eaf6f5; } }
+  img { width: 88px; height: 88px; border-radius: 24%; margin: 0 auto 18px; display: block; }
+  h1 { margin: 0 0 8px; font-size: 1.8rem; letter-spacing: -0.02em; }
+  p { margin: 0 0 20px; opacity: 0.7; max-width: 34em; }
+  ol { text-align: left; max-width: 30em; margin: 0 auto 24px; opacity: 0.85; line-height: 1.5; }
+  ol li { margin-bottom: 8px; }
+  button { font: inherit; font-weight: 700; color: #fff; background: #5b5ce2;
+           border: 0; border-radius: 12px; padding: 12px 22px; cursor: pointer; }
+  button:active { opacity: 0.8; }
+  .copied { display: none; margin-top: 10px; font-weight: 700; color: #2e9e6b; }
+  a { color: #5b5ce2; font-weight: 700; text-decoration: none; }
+  @media (prefers-color-scheme: dark) { a { color: #a7a7ff; } }
+</style>
+</head>
+<body>
+<main>
+  <img src="/img/brain-192.png" alt="">
+  <h1>You're invited to a shared space.</h1>
+  <p>Someone wants to share memories with you in Max Memory.
+     If the app were installed, this link would have opened it —
+     so there are two quick steps:</p>
+  <ol>
+    <li>Install <strong>Max Memory</strong> on this iPhone or iPad.</li>
+    <li>Come back to the message and <strong>tap the invite link again</strong> —
+        it will open the app and walk you through joining.</li>
+  </ol>
+  <p>If tapping again doesn't open the app, copy the link and paste it
+     into Max Memory under <em>Paste invite link</em>.</p>
+  <button id="copy">Copy the invite link</button>
+  <div class="copied" id="copied">Copied.</div>
+</main>
+<script>
+  // The secret rides the URL fragment; location.href keeps it intact
+  // and it never left this device — no request carries it.
+  document.getElementById('copy').addEventListener('click', function () {
+    var link = location.href;
+    var done = function () {
+      document.getElementById('copied').style.display = 'block';
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(link).then(done, function () { prompt('Copy this link:', link); });
+    } else {
+      prompt('Copy this link:', link);
+    }
+  });
+</script>
+</body>
+</html>
