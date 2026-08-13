@@ -6,10 +6,34 @@
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [
+    "cleanUrls": false,
+    "headers": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/@(proposed_index|product|for-memory|for-sales|for-households|for-travel|for-caregivers).html",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow, noarchive"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js|png|svg|woff2)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=3600"
+          }
+        ]
+      },
+      {
+        "source": "**/*.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=300"
+          }
+        ]
       }
     ]
   }

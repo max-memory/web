@@ -1,0 +1,21 @@
+# VCS working copies
+.jj/
+
+# Firebase deploy cache and CLI debug logs
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+ui-debug.log
+
+# macOS
+.DS_Store
+
+# Node (firebase-tools, if ever installed locally)
+node_modules/
+
+# Local env / secrets
+.env
+.env.*
+
+# Claude Code local-only settings
+.claude/settings.local.json
