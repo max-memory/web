@@ -29,6 +29,15 @@
         ]
       },
       {
+        "source": "/previews/**",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex, nofollow, noarchive"
+          }
+        ]
+      },
+      {
         "source": "/@(proposed_index|product|for-memory|for-sales|for-households|for-travel|for-caregivers).html",
         "headers": [
           {

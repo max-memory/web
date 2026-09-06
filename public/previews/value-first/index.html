@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Max Memory — compare marketing pages</title>
+<style>
+:root{color-scheme:light dark;--bg:#f4f6f5;--surface:#fff;--ink:#173c43;--muted:#536870;--line:#cbd8d7;--accent:#00536c}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}header{padding:16px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:22px;flex-wrap:wrap}h1{font-size:19px;letter-spacing:-.03em;margin:0}p{margin:4px 0 0;color:var(--muted);font-size:13px}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-left:auto}label{font-size:13px}select{font:inherit;padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);max-width:100%}a{color:var(--accent);text-underline-offset:3px}.panes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1px;background:var(--line)}.pane{min-width:0;background:var(--surface)}.pane-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 20px;border-bottom:1px solid var(--line)}h2{margin:0;font-size:14px}.pane-head a{font-size:13px}iframe{display:block;width:100%;height:calc(100dvh - 145px);min-height:500px;border:0;background:var(--surface)}.panes[data-view="original"]{grid-template-columns:1fr}.panes[data-view="original"] #revised-pane{display:none}.panes[data-view="revised"]{grid-template-columns:1fr}.panes[data-view="revised"] #original-pane{display:none}footer{font-size:12px;color:var(--muted);padding:8px 22px}a:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:3px}@media(prefers-color-scheme:dark){:root{--bg:#0c1519;--surface:#16242b;--ink:#eaf6f5;--muted:#b7cdd2;--line:#35474f;--accent:#a7a7ff}}@media(max-width:700px){header{gap:12px;padding:14px}.controls{margin-left:0}.panes{grid-template-columns:1fr}.pane-head{padding:11px 14px}iframe{height:75dvh;min-height:450px}footer{padding:10px 14px}}
+</style>
+</head>
+<body>
+<header><div><h1>Max Memory · Before & after</h1><p>Original pages are preserved; revised pages are a proposal.</p></div><div class="controls"><label for="page">Page <select id="page"><option value="proposed_index.html">Homepage</option><option value="product.html">Product tour</option><option value="for-households.html">Households</option><option value="for-sales.html">Sales</option><option value="for-memory.html">Memory support</option><option value="for-travel.html">Travel</option><option value="for-caregivers.html">Caregivers</option></select></label><label for="view">View <select id="view"><option value="both">Side by side</option><option value="original">Original only</option><option value="revised">Revised only</option></select></label></div></header>
+<main class="panes" data-view="both">
+<section class="pane" id="original-pane"><div class="pane-head"><h2>Original</h2><a id="original-link" href="original/proposed_index.html" target="_blank" rel="noopener">Open full page ↗</a></div><iframe id="original" title="Original marketing page" src="original/proposed_index.html"></iframe></section>
+<section class="pane" id="revised-pane"><div class="pane-head"><h2>Revised · value first</h2><a id="revised-link" href="revised/proposed_index.html" target="_blank" rel="noopener">Open full page ↗</a></div><iframe id="revised" title="Revised marketing page" src="revised/proposed_index.html"></iframe></section>
+</main><footer>Each page scrolls independently and adapts to its pane width. Use a single-page view for the full desktop layout. On narrow screens, the two versions stack.</footer>
+<script>
+const page = document.getElementById('page');
+page.addEventListener('change', () => {
+  for (const side of ['original','revised']) {
+    const path = side + '/' + page.value;
+    document.getElementById(side).src = path;
+    document.getElementById(side).title = side + ' — ' + page.selectedOptions[0].text;
+    document.getElementById(side + '-link').href = path;
+  }
+});
+document.getElementById('view').addEventListener('change', event => {
+  document.querySelector('.panes').dataset.view = event.target.value;
+});
+</script>
+</body></html>

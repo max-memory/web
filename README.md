@@ -44,6 +44,14 @@ a server route.
   never send `location.href` anywhere, only copy it to the clipboard.
   Design: `my-memory/feature-docs/invite-flow.md`.
 
+## Marketing review pages
+
+`public/previews/value-first/` holds the original/revised marketing comparison.
+It is included in normal `./deploy.sh` deployments and served at
+[the comparison URL](https://max-memory.com/previews/value-first/).
+The revised homepage is `public/previews/value-first/revised/proposed_index.html`.
+Internal review notes remain under `previews/value-first/`, outside Hosting.
+
 ## Private planning
 
 `marketing-strategy.html` is Tom's visual strategy notebook: pricing hypotheses,
