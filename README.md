@@ -44,6 +44,12 @@ a server route.
   never send `location.href` anywhere, only copy it to the clipboard.
   Design: `my-memory/feature-docs/invite-flow.md`.
 
+## Private planning
+
+`marketing-strategy.html` is Tom's visual strategy notebook: pricing hypotheses,
+trial-cost scenarios, proposed experiments, and a decision log. Open it directly
+in a browser. It stays outside `public/` and is not included in Hosting deploys.
+
 ## Deploying
 
 Tom deploys. The CLI isn't installed globally; run it through npx

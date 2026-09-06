@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Max Memory · Marketing strategy notebook</title>
+<style>
+  :root { color-scheme:light dark; --paper:#f6f4ed; --card:#fffefa; --ink:#173c43; --muted:#526970; --line:#d6ddd6; --teal:#006e70; --wash:#e2f0ea; --yellow:#f6d45b; --indigo:#5354b9; --pending:#765600; --pending-bg:#fff1bc; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:28px; }
+  body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+  a { color:var(--teal); text-underline-offset:3px; }
+  button,input { font:inherit; }
+  button { cursor:pointer; color:var(--ink); background:var(--card); border:1px solid var(--line); border-radius:9px; padding:9px 14px; }
+  button:hover { border-color:var(--teal); }
+  :focus-visible { outline:3px solid var(--indigo); outline-offset:4px; }
+  .shell { display:grid; grid-template-columns:225px minmax(0,1fr); max-width:1440px; margin:auto; }
+  aside { padding:36px 24px; border-right:1px solid var(--line); }
+  .rail { position:sticky; top:32px; }
+  .brand { font-weight:800; letter-spacing:-.04em; font-size:23px; line-height:1.1; }
+  .brand-mark { display:inline-grid; place-items:center; width:35px; height:35px; margin-bottom:15px; border-radius:11px; background:var(--yellow); color:#173c43; font:800 19px Georgia,serif; }
+  .rail-note { color:var(--muted); font-size:12px; margin:10px 0 30px; }
+  nav { display:grid; gap:5px; }
+  nav a { color:var(--muted); text-decoration:none; padding:9px 0; font-size:14px; }
+  nav a:hover { color:var(--teal); }
+  nav span { display:inline-block; width:27px; font-size:11px; color:var(--teal); font-weight:700; }
+  .rail-bottom { margin-top:36px; padding-top:20px; border-top:1px solid var(--line); font-size:12px; color:var(--muted); }
+  main { min-width:0; padding:42px 6% 60px; }
+  .eyebrow { text-transform:uppercase; letter-spacing:.13em; font-size:11px; font-weight:800; color:var(--teal); }
+  .topline { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+  h1 { font:normal clamp(40px,5.2vw,70px)/1.04 Georgia,"Times New Roman",serif; letter-spacing:-.045em; max-width:760px; margin:30px 0 23px; }
+  h1 em { color:var(--teal); font-weight:normal; }
+  h2 { font:normal clamp(27px,3vw,36px)/1.15 Georgia,"Times New Roman",serif; letter-spacing:-.025em; margin:7px 0 15px; }
+  h3 { font-size:18px; line-height:1.3; margin:0 0 10px; letter-spacing:-.02em; }
+  p { margin:0 0 14px; }
+  .lede { font-size:19px; line-height:1.55; color:var(--muted); max-width:760px; }
+  .chapter { margin-top:54px; padding-top:31px; border-top:1px solid var(--line); }
+  .section-head { display:flex; gap:18px; margin-bottom:23px; align-items:flex-start; }
+  .number { font:normal 26px Georgia,serif; color:var(--teal); padding-top:4px; }
+  .section-head p { color:var(--muted); max-width:700px; margin:0; }
+  .tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; margin-top:28px; }
+  .tile { border-top:3px solid var(--teal); background:var(--card); padding:21px; }
+  .tile .value { font:normal 40px/1.15 Georgia,serif; letter-spacing:-.04em; margin:12px 0; }
+  .tile p { font-size:14px; color:var(--muted); margin:0; }
+  .tag { display:inline-block; font-size:10px; font-weight:800; letter-spacing:.07em; text-transform:uppercase; padding:4px 8px; border-radius:5px; background:var(--wash); color:var(--teal); }
+  .tag.question { background:var(--pending-bg); color:var(--pending); }
+  .note { padding:19px 23px; background:var(--wash); border-left:3px solid var(--teal); margin:23px 0 0; }
+  .note p:last-child { margin:0; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  .panel { padding:25px; background:var(--card); border:1px solid var(--line); border-radius:12px; }
+  .panel .tag { margin-bottom:16px; }
+  ul,ol { padding-left:21px; margin:12px 0 0; }
+  li { margin-bottom:9px; }
+  .small { font-size:13px; color:var(--muted); }
+  .flow { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:24px 0; counter-reset:flow; }
+  .flow article { border-top:1px solid var(--line); padding-top:18px; }
+  .flow article::before { counter-increment:flow; content:"0" counter(flow); display:block; font-size:12px; font-weight:800; color:var(--teal); margin-bottom:10px; }
+  .flow p { font-size:14px; color:var(--muted); }
+  .quote { font:normal 24px/1.4 Georgia,serif; color:var(--teal); padding:4px 0 4px 20px; border-left:3px solid var(--yellow); margin:23px 0; }
+  .controls { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
+  label { display:block; font-size:13px; font-weight:650; }
+  input { display:block; width:100%; margin-top:8px; padding:11px 12px; border:1px solid var(--line); background:var(--paper); color:var(--ink); border-radius:8px; font-variant-numeric:tabular-nums; }
+  .results { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; margin:25px 0 20px; }
+  .result { padding-top:18px; border-top:1px solid var(--line); }
+  .result span { display:block; font-size:12px; color:var(--muted); }
+  .result strong { display:block; font:normal clamp(28px,3.7vw,43px)/1.2 Georgia,serif; margin:8px 0; overflow-wrap:anywhere; }
+  .scenario-row { display:grid; grid-template-columns:48px minmax(0,1fr) 85px; gap:12px; align-items:center; margin:12px 0; font-size:13px; }
+  .bar-track { height:19px; background:var(--wash); border-radius:3px; overflow:hidden; }
+  .bar { height:100%; background:var(--teal); border-radius:3px; }
+  .scenario-row strong { text-align:right; font-variant-numeric:tabular-nums; }
+  .chart-label { display:flex; justify-content:space-between; gap:20px; font-size:12px; color:var(--muted); margin-top:23px; }
+  .table-wrap { overflow-x:auto; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th { text-align:left; color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.06em; }
+  td,th { padding:15px 13px 15px 0; border-bottom:1px solid var(--line); vertical-align:top; }
+  td:first-child { font-weight:650; }
+  .experiment { display:grid; grid-template-columns:42px 1fr; gap:17px; padding:24px 0; border-bottom:1px solid var(--line); }
+  .experiment:first-child { padding-top:0; }
+  .experiment-id { display:grid; place-items:center; align-self:start; height:37px; background:var(--wash); color:var(--teal); font-size:12px; font-weight:750; border-radius:9px; }
+  .experiment p:last-child { margin-bottom:0; }
+  details { border-bottom:1px solid var(--line); padding:17px 0; }
+  summary { cursor:pointer; font-weight:650; }
+  details p { margin-top:12px; color:var(--muted); }
+  .sources { font-size:13px; color:var(--muted); }
+  .sources li { margin-bottom:13px; }
+  footer { padding-top:28px; margin-top:40px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; }
+  #calc-error { color:var(--pending); margin:12px 0; }
+  [hidden] { display:none !important; }
+  @media(prefers-color-scheme:dark) { :root { --paper:#101d22; --card:#17272d; --ink:#e4efea; --muted:#abc0bc; --line:#35484b; --teal:#77d8c9; --wash:#213b3b; --yellow:#f6d45b; --indigo:#b9b8ff; --pending:#f3d780; --pending-bg:#3e3622; } }
+  @media(max-width:1050px) { .shell { grid-template-columns:180px minmax(0,1fr); } aside { padding:30px 18px; } main { padding:34px 5% 50px; } .tiles { gap:10px; } .tile { padding:17px; } .controls { grid-template-columns:1fr 1fr; } }
+  @media(max-width:760px) { .shell { display:block; } aside { border-right:0; border-bottom:1px solid var(--line); padding:18px 22px; } .rail { position:static; } .brand { display:inline-block; font-size:19px; } .brand-mark { margin:0 10px 0 0; vertical-align:middle; } .brand br { display:none; } .rail-note,.rail-bottom { display:none; } nav { display:flex; gap:16px; overflow-x:auto; margin-top:12px; } nav a { white-space:nowrap; padding:6px 0; font-size:12px; } nav span { display:none; } main { padding:27px 22px 40px; } .tiles,.flow,.two { grid-template-columns:1fr; } .tile { padding:19px; } .tile .value { margin:7px 0; } .chapter { margin-top:36px; } .panel { padding:20px; } .results { gap:12px; } .result strong { font-size:29px; } .result span { font-size:11px; } h1 { margin-top:24px; } .lede { font-size:17px; } .section-head { gap:12px; } }
+  @media(max-width:390px) { .results { grid-template-columns:1fr; } .controls { gap:12px; } .scenario-row { grid-template-columns:35px minmax(0,1fr) 70px; gap:8px; } }
+  @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  @media print { :root { color-scheme:light; --paper:#fff; --card:#fff; --ink:#173c43; --muted:#526970; --line:#d6ddd6; --teal:#006e70; --wash:#e2f0ea; --pending:#765600; --pending-bg:#fff1bc; } body { font-size:11pt; } .shell { display:block; } aside,.print-button { display:none; } main { padding:0; } h1 { font-size:38pt; } .chapter { margin-top:25px; padding-top:20px; } .panel,.tile,.experiment,.note,tr { break-inside:avoid; } h2,h3,.section-head { break-after:avoid; } .tiles,.flow { grid-template-columns:repeat(3,1fr); } .two { grid-template-columns:1fr 1fr; } .results { grid-template-columns:repeat(3,1fr); } .bar-track,.bar,.tag { print-color-adjust:exact; } }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside><div class="rail">
+    <div class="brand-mark" aria-hidden="true">M</div>
+    <div class="brand">Max<br> Memory</div>
+    <p class="rail-note">Founder’s strategy notebook<br>Working edition · 06 Sep 2026</p>
+    <nav aria-label="Notebook sections">
+      <a href="#direction"><span>01</span> Launch direction</a>
+      <a href="#value"><span>02</span> Value & audience</a>
+      <a href="#economics"><span>03</span> Trial economics</a>
+      <a href="#experiments"><span>04</span> Learning plan</a>
+      <a href="#premium"><span>05</span> Premium theory</a>
+      <a href="#decisions"><span>06</span> Decision log</a>
+      <a href="#evidence"><span>07</span> Evidence & sources</a>
+    </nav>
+    <div class="rail-bottom">Private working document.<br>Kept outside the deployed site.<br><br>Hypotheses are labeled.<br>No conversion results yet.</div>
+  </div></aside>
+  <main>
+    <header>
+      <div class="topline"><span class="eyebrow">Strategy / Pricing / Learning</span><button class="print-button" type="button" onclick="window.print()">Print / Save PDF</button></div>
+      <h1>Find what people<br>will <em>come back for.</em></h1>
+      <p class="lede">A working record of how Max Memory could reach its first paying customers, what it can afford to learn, and what would change the plan.</p>
+      <div class="tiles">
+        <article class="tile"><span class="tag">Fixed for planning</span><div class="value">$5 / mo</div><p>Basic’s price stays put.<br>Optimize the allowance and feature package.</p></article>
+        <article class="tile"><span class="tag question">Proposed allowance</span><div class="value">$0.10</div><p>Model spend per trial.<br>Useful experience per dime is unmeasured.</p></article>
+        <article class="tile"><span class="tag">Growth hypothesis</span><div class="value">Invite → Basic</div><p>Premium creates; paid Basic members join.<br>Personal sync remains an open variable.</p></article>
+      </div>
+    </header>
+
+    <section class="chapter" id="direction">
+      <div class="section-head"><span class="number">01</span><div><div class="eyebrow">Launch direction</div><h2>A focused first offer.</h2><p>Basic stays at $5/month for planning. The adjustable variables are the dollar usage budget per user and Premium packaging. The leading sharing model is Premium creation with paid Basic participation; personal sync remains open.</p></div></div>
+      <div class="two">
+        <article class="panel"><span class="tag">Tom’s current thinking</span><h3>Basic at $5 per month</h3><p>Tom does not expect to change Basic’s price. The strategy is to find a sustainable allowance and a compelling feature package at $5/month. Trial spend and recurring paid-user spend are separate budgets.</p><p class="small">A $0.10 trial is a proposal, not a measured sufficient allowance or an implemented entitlement.</p></article>
+        <article class="panel"><span class="tag question">Suggested experiment</span><h3>Release access in batches</h3><p>Begin with a small cohort, inspect what happened, and decide whether to admit the next one. A proposed first batch of 100 fully used trials costs $10 in model spend.</p><p class="small">No decision to launch this experiment has been made. A 1,000-person launch is not required to begin learning.</p></article>
+      </div>
+      <div class="note"><strong>The central uncertainty</strong><p>At a fixed $5/month, what usage allowance and feature package make Basic useful enough to keep, while leaving a meaningful reason to choose Premium?</p></div>
+    </section>
+
+    <section class="chapter" id="value">
+      <div class="section-head"><span class="number">02</span><div><div class="eyebrow">Value & audience</div><h2>Give the promise time to become useful.</h2><p>Working theory: Max earns trust when something saved earlier becomes useful later. Capture quality, recall quality, and the habit of returning all matter.</p></div></div>
+      <div class="quote">“Remember it now. Ask for it later.”</div>
+      <div class="flow">
+        <article><h3>Save something real</h3><p>A place, a household detail, a client’s preference, or something the person actually expects to forget.</p></article>
+        <article><h3>Need it again</h3><p>The trial should leave room to return days later. A spend limit can coexist with a generous time window.</p></article>
+        <article><h3>Recognize the value</h3><p>Max finds the right thing with little effort. The person has a concrete reason to continue using it.</p></article>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Existing audience</th><th scope="col">Value hypothesis</th><th scope="col">Evidence to seek</th></tr></thead><tbody>
+        <tr><td>Busy households</td><td>Reduce repeated searching for everyday details.</td><td>They return for lists, places, sizes, or household history.</td></tr>
+        <tr><td>Sales & relationship pros</td><td>Recall useful personal context before a meeting.</td><td>They use Max before real meetings and pay to continue.</td></tr>
+        <tr><td>Unreliable memories</td><td>Capture fleeting thoughts and recover them easily.</td><td>They build a repeatable capture-and-recall habit.</td></tr>
+        <tr><td>Travelers</td><td>Keep trip details available when needed.</td><td>They return across a trip; test whether use persists between trips.</td></tr>
+        <tr><td>Caregivers</td><td>Keep chosen care logistics and history accessible.</td><td>They find details reliably; preserve the memory-helper positioning.</td></tr>
+      </tbody></table></div>
+      <p class="small" style="margin-top:16px">Suggested recruitment: choose one audience you can reach directly, invite willing testers with a specific recurring need, and use its existing audience page. Compare other audiences later. There is no evidence yet that one segment will convert best.</p>
+    </section>
+
+    <section class="chapter" id="economics">
+      <div class="section-head"><span class="number">03</span><div><div class="eyebrow">Trial economics</div><h2>Put a price on the experiment.</h2><p>Explore exposure and conversion scenarios. These are arithmetic assumptions, not forecasts.</p></div></div>
+      <div class="panel">
+        <div class="controls">
+          <label for="trials">Number of trials<input id="trials" type="number" min="1" max="1000000" step="1" value="1000" required></label>
+          <label for="allowance">Model budget / trial ($)<input id="allowance" type="number" min="0" max="100" step="0.01" value="0.10" required></label>
+          <label for="conversion">Conversion to paid (%)<input id="conversion" type="number" min="0" max="100" step="0.1" value="2" required></label>
+          <div class="fixed-price"><span class="tag">Fixed Basic price</span><p style="font:normal 30px Georgia,serif; margin:10px 0 0">$5 / month</p></div>
+        </div>
+        <p id="calc-error" role="alert" hidden>Enter valid values within the allowed ranges to calculate a scenario.</p>
+        <div id="calculated" aria-live="polite" aria-atomic="true">
+          <div class="results">
+            <div class="result"><span>Full-use trial model spend</span><strong id="spend">$100.00</strong><span>Assumes every trial uses its entire budget.</span></div>
+            <div class="result"><span>Modeled paying customers</span><strong id="customers">20</strong><span>Expected count; actual results will vary.</span></div>
+            <div class="result"><span>Trial model cost / customer</span><strong id="acquisition">$5.00</strong><span>Excludes other acquisition and service costs.</span></div>
+          </div>
+          <p class="small" id="revenue">At this conversion, one paid month produces $100.00 in gross subscription revenue, before fees and all service costs. This is not profit or a payback estimate.</p>
+        </div>
+        <div class="chart-label"><span>Conversion scenarios · all trials fully used</span><span>Trial model cost / payer</span></div>
+        <div id="scenario-chart" aria-label="Comparison of trial model cost per payer at different conversion rates">
+          <div class="scenario-row"><span>1%</span><div class="bar-track" aria-hidden="true"><div class="bar" style="width:100%"></div></div><strong>$10.00</strong></div>
+          <div class="scenario-row"><span>2%</span><div class="bar-track" aria-hidden="true"><div class="bar" style="width:50%"></div></div><strong>$5.00</strong></div>
+          <div class="scenario-row"><span>5%</span><div class="bar-track" aria-hidden="true"><div class="bar" style="width:20%"></div></div><strong>$2.00</strong></div>
+          <div class="scenario-row"><span>10%</span><div class="bar-track" aria-hidden="true"><div class="bar" style="width:10%"></div></div><strong>$1.00</strong></div>
+        </div>
+        <p class="small" style="margin:18px 0 0">Formula: trials × allowance = full-use trial spend. Divide that spend by trials × conversion rate to get trial model cost per payer. With zero conversions, no cost-per-payer figure is defined.</p>
+        <noscript><p class="note">The displayed example assumes 1,000 trials, a $0.10 allowance, 2% conversion, and a $5 monthly price. Enable JavaScript to change it.</p></noscript>
+      </div>
+      <div class="two" style="margin-top:24px">
+        <article><h3>What this budget bounds</h3><p class="small">Only trial model spend, assuming the allowance is enforced. Total exposure also includes infrastructure and any other costs. Implementation must account for an in-flight model round that can cross the remaining balance; a threshold checked only before a round is not a strict ceiling.</p></article>
+        <article><h3>What we still need to measure</h3><p class="small">How far $0.10 goes for a new user: first-session overhead, ordinary saves and recalls, retries, and longer conversations. Historic per-conversation averages do not establish today’s onboarding cost.</p></article>
+      </div>
+    </section>
+
+    <section class="note" aria-labelledby="paid-budget-title">
+      <h3 id="paid-budget-title">The recurring allowance is a separate lever</h3>
+      <p>The calculator above models trial acquisition spend. For a paying user, choose a dollar usage allowance per billing cycle. A larger allowance can support more use, but consumes more of the same $5 subscription revenue.</p>
+      <p class="small">Evaluate actual spend per paid user, how often people hit the cap, satisfaction, and renewal. The allowance is a ceiling, not assumed average consumption. Sustainable economics must also cover storefront fees and other service costs. No paid-user allocation has been chosen in this notebook.</p>
+    </section>
+
+    <section class="chapter" id="experiments">
+      <div class="section-head"><span class="number">04</span><div><div class="eyebrow">Learning plan · proposed</div><h2>Buy evidence a little at a time.</h2><p>Hold Basic at $5. Investigate usage allocations and the placement of sync and shared memories, changing one variable at a time where practical. No experiment below has run.</p></div></div>
+      <div class="experiment"><span class="experiment-id">A</span><div><h3>Check what a dime buys</h3><p>Review representative recent usage or run a separately authorized, budgeted trial simulation. Include saving something, returning for it, and recovering from a misunderstanding.</p><p class="small"><strong>Decision:</strong> Is the allowance sufficient for a useful experience? If it runs out during setup or troubleshooting, improve that path or reconsider the allowance before scaling.</p></div></div>
+      <div class="experiment"><span class="experiment-id">B</span><div><h3>Offer one clear proposition to a small cohort</h3><p>Proposed first batch: 100 trials at $0.10 each. Make the limited trial and subsequent $5/month price clear. Explain the allowance in a way users understand; avoid promising a fixed conversation count until measured.</p><p class="small"><strong>Decision:</strong> Admit another batch only after reviewing spend, useful recall, paid starts, and reasons for leaving. No ad spend or recruitment outreach is authorized by this notebook.</p></div></div>
+      <div class="experiment"><span class="experiment-id">C</span><div><h3>Look for voluntary payment and renewal</h3><p>Keep the cohort’s actual counts: trial starts, paid starts, and renewals among customers who have reached their renewal date. With willing participants, ask whether Max retrieved something useful and what influenced their decision.</p><p class="small"><strong>Decision:</strong> A few payments are encouraging, but repeat use, renewals, and service cost determine whether to expand. Small samples are directional evidence.</p></div></div>
+      <div class="note"><strong>Learn without collecting people’s memories.</strong><p>Use aggregate operational and billing counts where available, plus voluntary feedback. Do not add website analytics, cross-site tracking, or memory-content collection. How to measure useful recall while honoring the product’s privacy stance remains a design question.</p></div>
+      <h3 style="margin-top:28px">Use the outcome to adjust the offer</h3>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Observed pattern</th><th scope="col">Possible explanation</th><th scope="col">Next investigation</th></tr></thead><tbody>
+        <tr><td>Few people try it</td><td>Reach, positioning, trust, or upfront price.</td><td>Ask prospective users what stopped them; check which audience saw the offer.</td></tr>
+        <tr><td>They try, then disappear</td><td>Little immediate usefulness, friction, or no return habit.</td><td>Investigate the first real save and later recall.</td></tr>
+        <tr><td>Allowance runs out early</td><td>Trial budget is too small or usage is inefficient.</td><td>Inspect cost and failure patterns before spending on more trials.</td></tr>
+        <tr><td>They rely on Max, but decline $5</td><td>Price, subscription preference, or perceived value.</td><td>Ask which missing feature or usage limit matters. Test the allowance or package while keeping Basic at $5.</td></tr>
+        <tr><td>They pay, then cancel</td><td>Novelty fades, reliability disappoints, usage is constrained, or the feature package falls short.</td><td>Investigate renewal reasons, usage-limit encounters, and demand for sync or sharing.</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section class="chapter" id="premium">
+      <div class="section-head"><span class="number">05</span><div><div class="eyebrow">Central growth hypothesis</div><h2>One Premium member can bring in paying Basic members.</h2><p>Tom identified this as a key insight: creating a shared space can give another person a concrete reason to subscribe to Basic at $5/month. Sharing can support both upgrades and customer acquisition.</p></div></div>
+      <div class="quote">“Join our household’s memory” gives someone a reason to start.</div>
+      <div class="flow">
+        <article><h3>Premium creates</h3><p>A Premium subscriber creates a useful shared space and invites the people who belong in it.</p></article>
+        <article><h3>Basic joins</h3><p>An invited person can subscribe to Basic at $5/month to participate. They do not need Premium just to join.</p></article>
+        <article><h3>Each member funds their usage</h3><p>Each person’s subscription carries their own usage allowance. The creator does not automatically fund everyone’s AI conversations.</p></article>
+      </div>
+      <div class="two">
+        <article class="panel"><span class="tag">Leading strategy</span><h3>Basic is a paid participant</h3><p>Personal memory, its own usage allowance, and participation in invited shared spaces. The invitation introduces a specific use for Max, potentially making the $5 decision easier.</p><p class="small">This is the leading packaging hypothesis, not a change to implemented entitlements. Joining includes the replication needed for a shared space to work.</p></article>
+        <article class="panel"><span class="tag question">Premium package</span><h3>Creation, more usage, possibly sync</h3><p>Premium can serve people who want to create shared spaces, need a larger usage allowance, or want personal sync if it is reserved for that tier.</p><p class="small">Personal sync remains an open tier decision. Premium price, allowances, member limits, trial invitations, and behavior when an owner cancels still need definition.</p></article>
+      </div>
+      <div class="note"><strong>Illustrative upside: three new Basic members = $15/month.</strong><p>If one Premium-created space causes three people to become new paying Basic subscribers, they add $15/month in gross subscription revenue, alongside the creator’s subscription. This is a scenario, not a forecast; fees and serving those members reduce the contribution.</p></div>
+      <h3 style="margin-top:28px">Cannibalization is part of the tradeoff</h3>
+      <p>Some guests might otherwise have bought Premium. Others might never have subscribed at all. Compare the value of new, retained Basic subscriptions with any foregone Premium upgrades and the cost of serving the group. An existing Basic subscriber joining a space is not a new acquisition.</p>
+      <div class="table-wrap"><table><thead><tr><th scope="col">What to learn</th><th scope="col">Evidence to seek</th></tr></thead><tbody>
+        <tr><td>Do invitations acquire subscribers?</td><td>New paid Basic starts attributable to invitations, using available billing information and voluntary feedback. Separate existing customers and trial-only participants.</td></tr>
+        <tr><td>Does the group keep paying?</td><td>Renewals among invited subscribers who have reached their renewal date; willing members’ accounts of how they use the space.</td></tr>
+        <tr><td>Does creation motivate Premium?</td><td>Customers who choose or upgrade to Premium to create a space, and whether they subsequently invite paying members.</td></tr>
+        <tr><td>Are the economics sustainable?</td><td>Actual model and sync costs alongside group subscription proceeds. Each member’s allowance bounds their AI use; shared infrastructure still has costs.</td></tr>
+      </tbody></table></div>
+      <p class="small" style="margin-top:16px">Key signal: new paying members brought in per Premium-created space, followed by their retention and contribution. The cannibalization counterfactual cannot be read from a conversion count alone. Acquisition and retention benefits remain unmeasured.</p>
+    </section>
+
+    <section class="chapter" id="decisions">
+      <div class="section-head"><span class="number">06</span><div><div class="eyebrow">Decision log</div><h2>Keep the uncertainty visible.</h2><p>Record actual decisions and observations here as the strategy develops. Current entries summarize the conversation on 6 September 2026.</p></div></div>
+      <div class="table-wrap"><table><thead><tr><th scope="col">Topic</th><th scope="col">Current position</th><th scope="col">Status</th></tr></thead><tbody>
+        <tr><td>Launch offer</td><td>Basic-first launch remains under consideration. When sharing is offered, the leading model is Premium creation and paid Basic participation.</td><td><span class="tag question">Considering</span></td></tr>
+        <tr><td>Basic price</td><td>$5/month held fixed for planning. Price changes are outside the current experiment scope.</td><td><span class="tag">Planning constraint</span></td></tr>
+        <tr><td>Paid-user usage budget</td><td>Dollar allowance per user per billing cycle is a strategy variable. No amount chosen here.</td><td><span class="tag question">Open</span></td></tr>
+        <tr><td>Trial cost</td><td>Tom proposed approximately $0.10 of model usage per trial.</td><td><span class="tag question">Proposed</span></td></tr>
+        <tr><td>Trial duration</td><td>No duration chosen. The earlier 30-day suggestion requires a spending cap.</td><td><span class="tag question">Open</span></td></tr>
+        <tr><td>First cohort</td><td>Assistant suggested 100 trials / $10 model-spend exposure.</td><td><span class="tag question">Unapproved</span></td></tr>
+        <tr><td>After trial expiry</td><td>Assistant suggested retaining access to saved information; exact free capabilities remain open.</td><td><span class="tag question">Open</span></td></tr>
+        <tr><td>Premium packaging</td><td>Leading model: Premium creates spaces; Basic can join; each member uses their own allowance. Personal sync, allowance amounts, and Premium price remain open.</td><td><span class="tag question">Open</span></td></tr>
+        <tr><td>Sharing as acquisition</td><td>Tom identified Premium-created spaces bringing in new $5 Basic subscribers as key. Benefits are not yet measured.</td><td><span class="tag">Central hypothesis</span></td></tr>
+        <tr><td>Website privacy</td><td>No analytics or third-party requests. An existing product stance.</td><td><span class="tag">Established</span></td></tr>
+        <tr><td>Conversion & retention</td><td>No measured results supplied. Calculator percentages are scenarios only.</td><td><span class="tag question">Unknown</span></td></tr>
+      </tbody></table></div>
+      <details><summary>Questions for the next strategy discussion</summary><ul><li>Which audience can Tom reach with the least effort and expense?</li><li>How much useful activity fits in $0.10 under current model costs?</li><li>What should trial users retain when their online allowance ends?</li><li>What evidence would justify another batch, and what total learning budget feels comfortable?</li><li>What recurring dollar allowance per paid user supports satisfactory use at a sustainable cost?</li><li>Should personal sync be included in Basic or be Premium-only?</li><li>How many new paying Basic members does a Premium-created space bring in, and how many renew?</li><li>How should invitations interact with trials, membership limits, and owner cancellation?</li></ul></details>
+      <details><summary>How to keep this notebook current</summary><p>This HTML file is the editable source of record. Ask for updates as decisions change; date new evidence and preserve the distinction between a proposal and an outcome. Calculator changes are temporary and are not saved to the file. Use Print / Save PDF to capture a scenario. No information is transmitted by the calculator.</p></details>
+    </section>
+
+    <section class="chapter" id="evidence">
+      <div class="section-head"><span class="number">07</span><div><div class="eyebrow">Evidence & sources</div><h2>Context is useful. Customers are the test.</h2><p>External comparisons do not establish Max’s conversion rate, sustainable allowance, or best feature package. Basic’s $5 price is a planning constraint.</p></div></div>
+      <ol class="sources">
+        <li><strong>Primary strategy record:</strong> Tom’s discussion with Codex, 6 September 2026. Basic at $5 and an approximately $0.10 trial allowance originate here. Tom subsequently clarified that Basic’s price is unlikely to change: usage dollars per user and Premium-only access to sync and shared memories are the strategy variables. Tom then emphasized the key acquisition hypothesis: a Premium subscriber can create a space that motivates invitees to buy $5 Basic, each with their own usage allowance. No customer results were supplied.</li>
+        <li><strong>Subscription benchmarks:</strong> <a href="https://www.revenuecat.com/state-of-subscription-apps/">RevenueCat, State of Subscription Apps 2026</a>, consulted 6 September 2026. Its cross-app observations show different outcomes for hard paywalls and freemium. These are not randomized comparisons and cannot predict Max’s results.</li>
+        <li><strong>Adjacent product:</strong> <a href="https://get.mem.ai/pricing">Mem pricing</a>, consulted 6 September 2026. The page listed a free tier and Plus at $9/month. Different features, limits, and audiences make it context rather than proof of willingness to pay for Max.</li>
+        <li><strong>Internal economics:</strong> <a href="../my-memory/pricing-and-profitability.md">pricing-and-profitability.md</a>. Its August update supersedes the older Gemini Live cost model. The historic conversation averages are not used in this calculator.</li>
+        <li><strong>Site and product context:</strong> <a href="README.md">Web README</a>, <a href="public/proposed_index.html">draft marketing homepage</a>, <a href="public/product.html">product tour</a>, and <a href="../my-memory/feature-docs/invite-flow.md">invite-flow design</a>. Some marketing copy still treats sharing as future functionality.</li>
+      </ol>
+    </section>
+    <footer><span>Max Memory · Founder’s strategy notebook · 06 Sep 2026</span><span>Local document · No external assets or tracking</span></footer>
+  </main>
+</div>
+<script>
+(() => {
+  const basicPrice = 5;
+  const inputs = ['trials', 'allowance', 'conversion'].map(id => document.getElementById(id));
+  const money = value => new Intl.NumberFormat('en-US', { style:'currency', currency:'USD' }).format(value);
+  const number = value => new Intl.NumberFormat('en-US', { maximumFractionDigits:2 }).format(value);
+  const rates = [1, 2, 5, 10];
+  function render() {
+    const valid = inputs.every(input => input.checkValidity() && Number.isFinite(input.valueAsNumber));
+    document.getElementById('calc-error').hidden = valid;
+    document.getElementById('calculated').hidden = !valid;
+    document.getElementById('scenario-chart').hidden = !valid;
+    if (!valid) return;
+    const [trials, allowance, conversion] = inputs.map(input => input.valueAsNumber);
+    const spend = trials * allowance;
+    const customers = trials * conversion / 100;
+    document.getElementById('spend').textContent = money(spend);
+    document.getElementById('customers').textContent = number(customers);
+    document.getElementById('acquisition').textContent = customers > 0 ? money(spend / customers) : 'No payers';
+    document.getElementById('revenue').textContent = customers > 0
+      ? `At this conversion, one paid month produces ${money(customers * basicPrice)} in gross subscription revenue, before fees and all service costs. This is not profit or a payback estimate.`
+      : `With zero conversions, ${money(spend)} in trial model spend produces no subscription revenue. Cost per paying customer is undefined.`;
+    const chart = document.getElementById('scenario-chart');
+    chart.replaceChildren();
+    for (const rate of rates) {
+      const row = document.createElement('div'); row.className = 'scenario-row';
+      const label = document.createElement('span'); label.textContent = `${rate}%`;
+      const track = document.createElement('div'); track.className = 'bar-track'; track.setAttribute('aria-hidden', 'true');
+      const bar = document.createElement('div'); bar.className = 'bar'; bar.style.width = allowance > 0 ? `${100 / rate}%` : '0%';
+      track.append(bar);
+      const cost = document.createElement('strong'); cost.textContent = money(allowance / (rate / 100));
+      row.append(label, track, cost); chart.append(row);
+    }
+  }
+  for (const input of inputs) input.addEventListener('input', render);
+  render();
+})();
+</script>
+</body>
+</html>
