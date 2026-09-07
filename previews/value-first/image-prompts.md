@@ -1,5 +1,8 @@
 # Generated marketing illustrations
 
+The accepted revision's assets were also copied to `public/img/` for the main
+marketing pages. The preview paths below remain available in the review snapshot.
+
 Generated with the built-in image_gen tool. These are illustrative scenes, not app screenshots or customer photos. Served JPEGs retain the full 1536×1024 composition; originals remain in Codex generated_images. No images are fetched from third parties at runtime.
 
 ## lamp-price
@@ -74,3 +77,13 @@ Prompt:
 
 Use case: photorealistic-natural. Asset type: landscape 3:2 editorial food photograph for Max Memory iPhone marketing, consistent with warm cream, muted teal, natural materials. A delicious home-cooked rustic tomato and white-bean soup in a teal ceramic bowl on a light oak kitchen table, with a spoon and a small piece of crusty bread. Behind and beside the bowl lies an open cookbook, its left page a clear photo of the SAME soup and its right page showing realistic recipe typography softly out of focus, no legible words required. Bright gentle window light, visible herbs and beans, appetizing real food texture, cozy everyday cooking rather than restaurant fine dining. Bowl and cookbook together tell the story of keeping a recipe from a cookbook. Simple uncluttered composition, subjects fill the landscape frame; no people, no phone or app interface, no logos, no watermarks, no added marketing captions. Do not reproduce any real cookbook page or branded design.
 
+
+## people-connections
+
+Asset: public/previews/value-first/revised/img/people-connections-v1.jpg
+
+Generated with the built-in image_gen tool. Fictional people; not testimonials.
+
+Prompt:
+
+Use case: photorealistic-natural. Asset type: landscape 3:2 editorial photograph for the Max Memory iPhone marketing website, about remembering people and their details. A warm candid small professional meeting in a bright modest cafe: three adult colleagues, a woman in her early 40s, a man in his 50s, and a woman in her 30s, gathered around a light oak table with coffee cups and one closed notebook, talking attentively. One person listening while another speaks, natural expressions and gestures, professional casual clothing with indigo and muted teal accents, cream surroundings and soft window light. Clear simple composition, realistic hands and faces, no branded items, no visible screens, no legible text, no graphic overlays, no watermark. Portray everyday relationship-building, not a posed stock handshake or sales presentation. These people are fictional, not actual customers or testers.

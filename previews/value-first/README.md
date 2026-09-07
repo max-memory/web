@@ -13,7 +13,10 @@ The deployable files now live at `public/previews/value-first/`:
 - `original/` is a frozen copy of the original marketing pages and assets.
 - `revised/` contains the proposed homepage, product tour, and audience pages.
 
-Edit those files directly. From the repository root, `./deploy.sh` publishes
+The accepted revision has also been copied to `public/`, starting with
+[`public/proposed_index.html`](https://max-memory.com/proposed_index.html).
+Make future marketing edits at those main site paths; the comparison directories
+remain review snapshots. From the repository root, `./deploy.sh` publishes
 both the existing site and this review directory through normal Firebase
 Hosting. The main homepage remains the Coming soon page. Review pages have
 `noindex, nofollow, noarchive` response headers and are publicly accessible
@@ -33,7 +36,7 @@ max-memory.com links above, not that temporary channel.
 - Lead with taking or choosing a photo, describing it by voice, and asking for
   it later by its story. Keep everyday and people examples as alternate demos.
 - Move the audience links immediately below the hero.
-- Keep the homepage focused, with direct links into a eleven-chapter product
+- Keep the homepage focused, with direct links into a twelve-chapter product
   tour. Its feature index covers voice, saving from other apps, photo context,
   Memory Events, recipes from websites and cookbook photos, recall, shopping
   and packing lists, collections, plans, shared
@@ -71,7 +74,15 @@ is not displayed as a customer-facing AI-credit price.
 
 ## Validation
 
-The original public files and copied originals were checked against their
-starting hashes. All 15 HTML pages were checked for local assets, internal
+Before promotion, the original public files and copied originals were checked
+against their starting hashes. The frozen `original/` copy still matches that
+manifest; the main site marketing files now match the accepted revision.
+All 15 review HTML pages were checked for local assets, internal
 links, section anchors, unique ids, and external references. New scripts passed
 JavaScript syntax checks. No browser interaction or screenshot QA was performed.
+
+People and relationship examples now cover questions across customers, teams,
+friends, and family. The FallChem names and allergy notes come from the fictional
+`my-memory/personas/salesperson-v1/world.json` fixture; its expected answer is
+illustrative copy, not a claim that this editing session ran the model harness.
+Birthday and other question examples are illustrative as labeled.

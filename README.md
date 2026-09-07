@@ -20,12 +20,16 @@ a server route.
 
 ## What's in `public/`
 
-- `index.html` — the landing page. `product.html` and the `for-*.html`
-  audience pages (households, travel, caregivers, sales, memory) are
-  linked variants; they and `proposed_index.html` are `noindex` via a
+- `index.html` — the Coming soon landing page. `proposed_index.html` is
+  the current marketing homepage, with `product.html` and the `for-*.html`
+  audience pages (households, travel, caregivers, sales, memory).
+  These marketing pages are `noindex` via a
   header rule in `firebase.json` while the product is pre-launch.
-- `css/site.css`, `js/site.js` — the whole runtime. `site.js` is
-  scroll-reveal plus the "coming soon" beta dialog. **No analytics, no
+- `css/site.css` and `css/revision.css` — shared styling and the current
+  marketing design. `js/examples.js` switches the homepage examples;
+  `js/navigation.js` keeps section links clear of the sticky header.
+  `js/site.js` provides the older scroll-reveal and "coming soon" beta
+  dialog behavior. **No analytics, no
   third-party requests — ever**; keep it that way, it's a product
   stance, not an omission.
 - `robots.txt` — AI/scraper/archive crawlers are told no, at length.
@@ -49,7 +53,10 @@ a server route.
 `public/previews/value-first/` holds the original/revised marketing comparison.
 It is included in normal `./deploy.sh` deployments and served at
 [the comparison URL](https://max-memory.com/previews/value-first/).
-The revised homepage is `public/previews/value-first/revised/proposed_index.html`.
+The accepted revision was copied to the main site paths. Make future marketing
+edits in `public/`, starting with `public/proposed_index.html`, served at
+[the marketing homepage](https://max-memory.com/proposed_index.html).
+The comparison's `original/` and `revised/` directories remain review snapshots.
 Internal review notes remain under `previews/value-first/`, outside Hosting.
 
 ## Private planning
