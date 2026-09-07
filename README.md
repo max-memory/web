@@ -65,6 +65,11 @@ Internal review notes remain under `previews/value-first/`, outside Hosting.
 trial-cost scenarios, proposed experiments, and a decision log. Open it directly
 in a browser. It stays outside `public/` and is not included in Hosting deploys.
 
+`tutorial-strategy.html` is the private tutorial workshop: a guided memory-store
+learning path, a searchable capability/phrase reference, and implementation
+decisions grounded in the app's help topics. Open it locally; it is a planning
+artifact, not a working in-app tutorial, and is also excluded from Hosting.
+
 ## Deploying
 
 Tom deploys. The CLI isn't installed globally; run it through npx
