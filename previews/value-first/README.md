@@ -33,9 +33,10 @@ max-memory.com links above, not that temporary channel.
 - Lead with taking or choosing a photo, describing it by voice, and asking for
   it later by its story. Keep everyday and people examples as alternate demos.
 - Move the audience links immediately below the hero.
-- Keep the homepage focused, with direct links into a ten-chapter product
+- Keep the homepage focused, with direct links into a eleven-chapter product
   tour. Its feature index covers voice, saving from other apps, photo context,
-  Memory Events, recall, shopping and packing lists, collections, plans, shared
+  Memory Events, recipes from websites and cookbook photos, recall, shopping
+  and packing lists, collections, plans, shared
   spaces, and privacy.
 - Explain the Share menu step by step and distinguish it from shared spaces.
   Give photos and Memory Events dedicated sections: keep a photo’s meaning

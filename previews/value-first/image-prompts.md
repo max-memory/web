@@ -63,3 +63,14 @@ Prompt:
 
 Use case: photorealistic-natural. Asset type: landscape 3:2 editorial photograph for Max Memory iPhone marketing illustrating remembering a recommended place. A charming modest neighborhood taco shop seen from the sidewalk, small outdoor wooden table, teal-painted door, warm cream stucco, a plate of tacos visible on the nearest table and potted plants. One small chalkboard sign by the entrance reads exactly "CASH ONLY" in simple legible white letters; no other readable signage or business names. Soft sunny late afternoon, inviting but believable ordinary place, tactile natural materials, warm cream and teal palette, uncluttered frame readable at small size, no people, no phones, no interface overlays, no watermark, no logos. Show a useful place someone would want to save along with the detail that it takes cash.
 
+
+## recipes-cookbook
+
+Asset: public/previews/value-first/revised/img/recipes-cookbook-v1.jpg
+
+Generated with the built-in image_gen tool.
+
+Prompt:
+
+Use case: photorealistic-natural. Asset type: landscape 3:2 editorial food photograph for Max Memory iPhone marketing, consistent with warm cream, muted teal, natural materials. A delicious home-cooked rustic tomato and white-bean soup in a teal ceramic bowl on a light oak kitchen table, with a spoon and a small piece of crusty bread. Behind and beside the bowl lies an open cookbook, its left page a clear photo of the SAME soup and its right page showing realistic recipe typography softly out of focus, no legible words required. Bright gentle window light, visible herbs and beans, appetizing real food texture, cozy everyday cooking rather than restaurant fine dining. Bowl and cookbook together tell the story of keeping a recipe from a cookbook. Simple uncluttered composition, subjects fill the landscape frame; no people, no phone or app interface, no logos, no watermarks, no added marketing captions. Do not reproduce any real cookbook page or branded design.
+
